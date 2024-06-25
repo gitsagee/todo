@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+<body>
+    <nav>Todo List</nav>
+    <div class="main-content">
+        <form method="post" action="/addTask" autocomplete="off">
+            <input type="text" name="task" placeholder="Add a new task">
+            <button type="submit">Add Task</button>
+        </form>
+        <form method="POST" action="/deleteTask">
+            <ul>
+                <% for(let i=0 ; i<listItems.length ; i++){ %>
+                    <li>
+                        <%= listItems[i] %>
+                        <button class="delete" type="submit" name="task" value="<%= listItems[i] %>">Delete</button>
+                    </li>
+                <% } %>
+            </ul>
+        </form>
+        
+    </div>
+</body>
+</html>
