@@ -5,7 +5,7 @@ const ejs = require("ejs");
 const path = require("path");
 const bodyParser = require("body-parser");
 
-const port = 3000;
+const port = 3000 || process.env.PORT;
 require("./db/conn.js");
 app.set("view engine", "ejs");
 const staticpath = path.join(__dirname, "public");
